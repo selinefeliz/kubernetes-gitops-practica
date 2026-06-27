@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app1:
+    image: mi-app-nodo:v1
+    expose:
+      - "3000"
+
+  app2:
+    image: mi-app-nodo:v1
+    expose:
+      - "3000"
+
+  nginx_balanceador:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app1
+      - app2

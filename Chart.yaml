@@ -1,0 +1,6 @@
+yamlapiVersion: v2
+name: ejemplo-docker
+description: creacion de un Helm Chart simple
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
